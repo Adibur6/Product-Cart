@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of products | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage">
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.price | currency }}</td>
@@ -23,4 +23,6 @@
       </tr>
     </tbody>
   </table>
+  <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
+  
   

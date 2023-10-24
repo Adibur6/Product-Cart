@@ -8,11 +8,16 @@ import { ProductsService } from '../service/products.service';
 })
 export class ProductTableComponent implements OnInit {
   products: any[] = [];
+  itemsPerPage = 10; // Number of items to display per page
+  currentPage = 1;
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
     this.products = this.productsService.getProducts();
+  }
+  onPageChange(page: number) {
+    this.currentPage = page;
   }
 
   editProduct(product: any) {
