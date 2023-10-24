@@ -1,0 +1,32 @@
+.navbar {
+    background-color: orange;
+    padding: 10px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar li {
+    margin: 0 20px; /* Increased margin for more spacing */
+    transition: all 0.3s;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1);
+  }
+  
+  .active {
+    background-color: #ff8c00;
+    border-radius: 5px;
+  }
+  
