@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'my-cart', component: MyCartComponent },
   { path: 'add-product', component: AddProductComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'edit-product/:id', component: AddProductComponent },
 ];
 
 @NgModule({

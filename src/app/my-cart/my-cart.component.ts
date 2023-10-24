@@ -18,6 +18,7 @@ export class MyCartComponent {
   ngOnInit() {
     // Fetch product data from the service
     this.products = this.myProductsService.getProducts();
+    console.log(this.products);
   }
 
   getTotalAmount(): number {

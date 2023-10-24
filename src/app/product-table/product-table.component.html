@@ -17,7 +17,7 @@
         <td>{{ product.unit }}</td>
         <td>{{ product.availableAmount }}</td>
         <td>
-          <button class="edit-button" (click)="editProduct(product)">Edit</button>
+          <button class="edit-button" [routerLink]="['/add-product', product.id]">Edit</button>
           <button class="delete-button" (click)="deleteProduct(product)">Delete</button>
         </td>
       </tr>

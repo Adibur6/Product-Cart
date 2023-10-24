@@ -11,7 +11,7 @@ export class AddProductComponent implements OnInit {
   productId: any;
   product = {
     name: '',
-    id: 0, // Change 'id' to a number
+    id: "", 
     price: 0,
     unit: '',
     availableAmount: 0
