@@ -1,13 +1,37 @@
 <div class="card">
-  <h3>{{ productName }}</h3>
-  <p>ID: {{ productId }}</p>
-  <p>Price: {{ price | currency }}</p>
-  <p>Unit: {{ unit }}</p>
-  <p>Available Amount: {{ availableAmount }}</p>
-  <button (click)="addToCart()">Add to Cart</button>
-  <div class="quantity-controls">
-    <button (click)="decrementQuantity()">-</button>
-    <span>{{ quantity }}</span>
-    <button (click)="incrementQuantity()">+</button>
+  <div class="info">
+    <div class="attribute">Product Name:</div>
+    <div class="value">{{ productName }}</div>
+  </div>
+
+  <div class="info">
+    <div class="attribute">ID:</div>
+    <div class="value">{{ productId }}</div>
+  </div>
+
+  <div class="info">
+    <div class="attribute">Price:</div>
+    <div class="value">{{ price | currency }}</div>
+  </div>
+
+  <div class="info">
+    <div class="attribute">Unit:</div>
+    <div class="value">{{ unit }}</div>
+  </div>
+
+  <div class="info">
+    <div class="attribute">Available Amount:</div>
+    <div class="value">{{ availableAmount }}</div>
+  </div>
+
+  <div class="info1">
+    <div class="value">
+        <div class="quantity-controls">
+            <button (click)="decrementQuantity()">-</button>
+            <span>{{ quantity }}</span>
+            <button (click)="incrementQuantity()">+</button>
+            <button (click)="addToCart()">Add to Cart</button>
+      </div>
+    </div>
   </div>
 </div>

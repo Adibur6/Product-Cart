@@ -1,50 +1,49 @@
 .card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 300px;
     background-color: #f5f5f5;
   }
   
-  .card h3 {
-    font-size: 1.5em; /* Larger font size for product name */
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif; /* Specify a font family */
-    color: #333; /* Text color */
-    text-transform: uppercase; /* Uppercase text */
+  .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
   }
   
-  .card p {
-    margin: 5px 0;
-    font-size: 1.1em; /* Larger font size for other details */
+  .attribute {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .value {
+    font-size: 1.5em;
   }
   
   .quantity-controls {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center align the buttons */
     margin-top: 10px;
   }
   
+  
+  /* Add spacing to buttons and center align them */
   button {
-    background-color: #007bff;
+    background-color: #609dde;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 16px; /* Increased padding for spacing */
     cursor: pointer;
-    margin: 0 5px;
-    font-size: 1.2em; /* Larger font size for buttons */
+    font-size: 1em;
+    margin: 0 5px; /* Add spacing between buttons */
   }
-  
-  .card button:nth-child(4) {
-    background-color: #28a745;
-  }
-  
-  .card button:nth-child(5),
-  .card button:nth-child(6) {
-    background-color: #007bff;
-  }
+
   

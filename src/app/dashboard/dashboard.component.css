@@ -1,0 +1,10 @@
+.dashboard {
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row if needed */
+    justify-content: flex-start; /* Start from the left side */
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  

@@ -19,7 +19,7 @@
   .navbar a {
     text-decoration: none;
     color: #fff; /* White text color for contrast */
-    font-size: 18px;
+    font-size: 25px;
     padding: 10px;
     transition: color 0.3s; /* Smooth color transition on hover */
   }

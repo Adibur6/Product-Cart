@@ -1,7 +1,12 @@
-<app-card
-  [productName]="'Rice'"
-  [productId]="'12345'"
-  [price]="10.99"
-  [unit]="'pcs'"
-  [availableAmount]="50"
-></app-card>
+<div class="dashboard">
+    <app-card
+      *ngFor="let product of products | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage"
+      [productName]="product.name"
+      [productId]="product.id"
+      [price]="product.price"
+      [unit]="product.unit"
+      [availableAmount]="product.availableAmount"
+    ></app-card>
+  </div>
+  <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
+  

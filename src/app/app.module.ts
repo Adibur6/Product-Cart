@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { CardComponent } from './card/card.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CardComponent } from './card/card.component';
     ProductTableComponent,
     MyCartComponent,
     CardComponent,
+    PaginationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule], // Add the AppRoutingModule here
   providers: [],
