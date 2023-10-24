@@ -1,0 +1,13 @@
+<div class="card">
+  <h3>{{ productName }}</h3>
+  <p>ID: {{ productId }}</p>
+  <p>Price: {{ price | currency }}</p>
+  <p>Unit: {{ unit }}</p>
+  <p>Available Amount: {{ availableAmount }}</p>
+  <button (click)="addToCart()">Add to Cart</button>
+  <div class="quantity-controls">
+    <button (click)="decrementQuantity()">-</button>
+    <span>{{ quantity }}</span>
+    <button (click)="incrementQuantity()">+</button>
+  </div>
+</div>
