@@ -1,0 +1,29 @@
+.mycart {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row if needed */
+    justify-content: flex-start; /* Start from the left side */
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  /* my-cart.component.css */
+
+  .total-amount {
+    background-color: #caeee1; /* Light green background color */
+    color: #333; /* Text color */
+    padding: 15px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    font-size: 2rem; /* Font size */
+    margin: 20px auto; /* Center-align in width and add spacing */
+    width: 20%; /* Set a fixed width for the div */
+  }
+  .total-amount:hover {
+    background-color: #adebd4; /* Change background color on hover */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+  
+  /* You can add additional styles as needed to match your design */
+  

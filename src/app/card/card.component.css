@@ -46,4 +46,6 @@
     margin: 0 5px; /* Add spacing between buttons */
   }
 
-  
+  #remove {
+    background-color: #ff7b7b;
+  }

@@ -19,18 +19,25 @@
     <div class="value">{{ unit }}</div>
   </div>
 
-  <div class="info">
+  <div class="info" *ngIf="isDashboardCard">
     <div class="attribute">Available Amount:</div>
     <div class="value">{{ availableAmount }}</div>
+  </div>
+  <div class="info" *ngIf="!isDashboardCard">
+    <div class="attribute">Selected Amount:</div>
+    <div class="value">{{ selectedAmount }}</div>
   </div>
 
   <div class="info1">
     <div class="value">
-        <div class="quantity-controls">
-            <button (click)="decrementQuantity()">-</button>
-            <span>{{ quantity }}</span>
-            <button (click)="incrementQuantity()">+</button>
-            <button (click)="addToCart()">Add to Cart</button>
+      <div class="quantity-controls" *ngIf="isDashboardCard">
+        <button (click)="decrementQuantity()">-</button>
+        <span>{{ quantity }}</span>
+        <button (click)="incrementQuantity()">+</button>
+        <button (click)="addToCart()">Add to Cart</button>
+      </div>
+      <div class="quantity-controls" *ngIf="!isDashboardCard">
+        <button id="remove"  (click)="removeFromCart()">Remove</button>
       </div>
     </div>
   </div>

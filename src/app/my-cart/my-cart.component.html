@@ -1,1 +1,24 @@
-<h1>My Cart</h1>
+<div>
+   
+
+  
+    <div class="total-amount">
+      Total Amount: {{ getTotalAmount() | currency }}
+    </div>
+    <div class="mycart">
+        <app-card
+          *ngFor="let product of products | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage"
+          [productName]="product.name"
+          [productId]="product.id"
+          [price]="product.price"
+          [unit]="product.unit"
+          [selectedAmount]="product.availableAmount"
+          [isDashboardCard]="false"
+        ></app-card>
+      </div>
+      <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
+      
+   
+  
+  </div>
+  

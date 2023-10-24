@@ -6,6 +6,7 @@
       [price]="product.price"
       [unit]="product.unit"
       [availableAmount]="product.availableAmount"
+      [isDashboardCard]="true"
     ></app-card>
   </div>
   <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
