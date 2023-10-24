@@ -1,8 +1,18 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap');
+
 body {
     background-image: url('./assets/background.png'); /* Update the path to your image */
     background-size: cover; /* Adjust the size of the background image */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Optional, to fix the background when scrolling */
     /* Additional styles as needed */
+    
   }
+*{
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Slab', serif;
+
+  }
+
   

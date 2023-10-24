@@ -1,43 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../service/products.service'; // Import the ProductsService
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  products: any[]; // Define the product array
+export class DashboardComponent implements OnInit {
+  products: any[] = []; // Define the product array
   itemsPerPage = 10; // Number of items to display per page
   currentPage = 1;
 
-  constructor() {
-    this.products = [
-      {
-        name: 'Product 1',
-        id: '12345',
-        price: 10.99,
-        unit: 'pcs',
-        availableAmount: 50
-      },
-      {
-        name: 'Product 2',
-        id: '67890',
-        price: 15.99,
-        unit: 'pcs',
-        availableAmount: 30
-      },
-      {
-        name: 'Product 1',
-        id: '12345',
-        price: 10.99,
-        unit: 'pcs',
-        availableAmount: 50
-      }
-      
-      
-      // Add more product data as needed
-    ];
+  constructor(private productsService: ProductsService) {} // Inject the ProductsService
+
+  ngOnInit() {
+    // Fetch product data from the service when the component initializes
+    this.products = this.productsService.getProducts();
   }
+
   onPageChange(page: number) {
     this.currentPage = page;
   }

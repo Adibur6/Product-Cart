@@ -1,0 +1,84 @@
+/* Apply styles to the entire table */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin:auto;
+    margin-top: 30px ;
+   
+  }
+  
+  /* Style table header row */
+  th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center; /* Center-align header cells */
+  }
+  
+  
+  /* Style table body rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  /* Style table cells (td) */
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  /* Add hover effect to table rows */
+  tr:hover {
+    background-color: #c9c9c9;
+  }
+  
+  /* Add a border to the table */
+  table {
+    border: 1px solid #3498db;
+  }
+  
+  /* Center-align text in the 'Unit' and 'Available Amount' columns */
+  td:nth-child(4),
+  td:nth-child(5) {
+    text-align: center;
+  }
+  
+  /* Add a bit of spacing at the bottom of the table */
+  table {
+    margin-bottom: 20px;
+  }
+  /* Style the Edit button */
+button.edit-button {
+    background-color: #6fc894; /* Green background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-right: 5px; /* Add spacing between buttons */
+  }
+  
+  button.edit-button:hover {
+    background-color: #499d65; /* Darker green on hover */
+  }
+  
+  /* Style the Delete button */
+  button.delete-button {
+    background-color: #f37769; /* Red background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  button.delete-button:hover {
+    background-color: #fb4d3a; /* Darker red on hover */
+  }
+  
