@@ -19,146 +19,7 @@ export class ProductsService {
       unit: 'pcs',
       availableAmount: 30,
     },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
-    {
-      id: "asd",
-      name: 'Product 1',
-      price: 10.99,
-      unit: 'pcs',
-      availableAmount: 50,
-    },
-    {
-      id: "2asd",
-      name: 'Product 2',
-      price: 15.99,
-      unit: 'pcs',
-      availableAmount: 30,
-    },
+    
   ];
 
   getProducts() {
@@ -174,6 +35,12 @@ export class ProductsService {
    
     // Push the new product to the products array
     this.products.push(product);
+  }
+  removeProduct(productId: string) {
+    const productIndex = this.products.findIndex(product => product.id === productId);
+    if (productIndex !== -1) {
+      this.products.splice(productIndex, 1);
+    }
   }
 
   editProduct(product: any) {

@@ -16,17 +16,21 @@ export class ProductTableComponent implements OnInit {
   ngOnInit() {
     this.products = this.productsService.getProducts();
   }
+
   onPageChange(page: number) {
     this.currentPage = page;
   }
 
-  editProduct(product: any) {
-    // Implement the edit action here
-    console.log('Editing product:', product);
-  }
-
   deleteProduct(product: any) {
-    // Implement the delete action here
-    console.log('Deleting product:', product);
+    // Find the index of the product to delete
+    const productIndex = this.products.findIndex(p => p.id === product.id);
+
+    if (productIndex !== -1) {
+      // Remove the product from the local products array
+      this.products.splice(productIndex, 1);
+
+      // Remove the product from the ProductsService
+      this.productsService.removeProduct(product.id);
+    }
   }
 }
