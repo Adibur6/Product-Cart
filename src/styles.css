@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('./assets/background.png'); /* Update the path to your image */
+    background-size: cover; /* Adjust the size of the background image */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional, to fix the background when scrolling */
+    /* Additional styles as needed */
+  }
+  
