@@ -1,6 +1,7 @@
 .navbar {
-    background-color: orange;
+    background-color: #3498db; /* A shade of blue */
     padding: 10px;
+    font-family: "Georgia", serif; /* A classic serif font */
   }
   
   .navbar ul {
@@ -11,22 +12,26 @@
   }
   
   .navbar li {
-    margin: 0 20px; /* Increased margin for more spacing */
+    margin: 0 20px;
     transition: all 0.3s;
   }
   
   .navbar a {
     text-decoration: none;
-    color: black;
+    color: #fff; /* White text color for contrast */
     font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s; /* Smooth color transition on hover */
   }
   
   .navbar a:hover {
-    transform: scale(1.1);
+    color: #0b0b0b; /* A shade of orange for contrast on hover */
+    transition: color 0.3s;
   }
   
   .active {
-    background-color: #ff8c00;
+    background-color: #2980b9; /* A slightly darker shade of blue for the active link */
+    color: #fff;
     border-radius: 5px;
   }
   
