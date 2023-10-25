@@ -1,10 +1,69 @@
 /* Apply styles to the entire table */
+
+/* styles.css */
+
+/* Container for centering and positioning */
+.center-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 10px;
+  column-gap: 10px;
+  
+}
+
+/* Style for the Add Product button */
+.add-product-button {
+  background-color: #3498db; /* Background color */
+  color: #fff; /* Text color */
+  padding: 12px 24px; /* Padding */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth hover effect */
+  font-size: 15px;
+}
+
+.add-product-button:hover {
+  background-color: #2980b9; /* Background color on hover */
+}
+
+/* Style for the Sort by dropdown */
+.sort-by-dropdown {
+  padding: 10px;
+  border: 2px solid #ccc; /* Border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  color: #333; /* Text color */
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none; /* Remove default arrow icon in some browsers */
+}
+
+/* Style the options inside the Sort by dropdown */
+.sort-by-dropdown option {
+  background-color: #f8f8f8; /* Background color */
+  color: #333; /* Text color */
+  font-size: 16px;
+  text-align: center;
+  padding: 5px 10px; /* Padding for each option */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Stylish hover effect for the Sort by dropdown options */
+.sort-by-dropdown option:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
+
 table {
     width: 90%;
     border-collapse: collapse;
     margin:auto;
     margin-top: 30px ;
-   
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
   
   /* Style table header row */

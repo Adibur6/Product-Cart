@@ -1,24 +1,31 @@
 <div>
-   
-
-  
+  <div class="upper">
     <div class="total-amount">
       Total Amount: {{ getTotalAmount() | currency }}
     </div>
-    <div class="mycart">
-        <app-card
-          *ngFor="let product of products | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage"
-          [productName]="product.name"
-          [productId]="product.id"
-          [price]="product.price"
-          [unit]="product.unit"
-          [selectedAmount]="product.selectedAmount"
-          [isDashboardCard]="false"
-        ></app-card>
-      </div>
-      <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
-      
-   
-  
+    <button class="total-amount" (click)="clearProducts()">
+      Checkout ✔
+    </button>
   </div>
-  
+  <div class="mycart">
+    <app-card
+      *ngFor="
+        let product of products
+          | slice
+            : (currentPage - 1) * itemsPerPage
+            : currentPage * itemsPerPage
+      "
+      [productName]="product.name"
+      [productId]="product.id"
+      [price]="product.price"
+      [unit]="product.unit"
+      [selectedAmount]="product.selectedAmount"
+      [isDashboardCard]="false"
+    ></app-card>
+  </div>
+  <app-pagination
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="products.length"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</div>

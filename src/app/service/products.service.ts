@@ -7,7 +7,7 @@ export class ProductsService {
   private products = [
     {
       id: "asd",
-      name: 'Product 1',
+      name: 'Product 3',
       price: 10.99,
       unit: 'pcs',
       availableAmount: 50,

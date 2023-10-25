@@ -35,7 +35,7 @@
     outline: none;
   }
   .form-control[type="number"] {
-    -webkit-appearance: none;
+   
     appearance: textfield;
     font-size: 18px; /* Increase font size for number input */
   }
@@ -43,7 +43,7 @@
   
   /* Styling the Add Product button */
   .add-product-button {
-    background-color: #007bff;
+    background-color: #3498db;
     color: white;
     padding: 15px 30px; /* Increase font size for button text */
     border: none;

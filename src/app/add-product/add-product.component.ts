@@ -1,30 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../service/products.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent implements OnInit {
-  productId: any;
-  product = {
+  productId: string | null=null;
+  isAddPage: boolean = true;
+  product: {
+    name: string;
+    id: string;
+    price: number;
+    unit: string;
+    availableAmount: number;
+  } = {
     name: '',
-    id: "", 
+    id: '',
     price: 0,
     unit: '',
-    availableAmount: 0
+    availableAmount: 0,
   };
 
-  constructor(private route: ActivatedRoute, private productService: ProductsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get('id'); // Get the product ID from the route parameter
 
     if (this.productId) {
       // Editing an existing product
-      this.product = this.productService.getProductById(this.productId) || this.product;
+      const existingProduct = this.productService.getProductById(this.productId);
+      if (existingProduct) {
+        this.product = { ...existingProduct }; // Create a copy of the existing product
+        this.isAddPage = false;
+      }
+    } else {
+      this.generateRandomProductId();
     }
   }
 
@@ -40,5 +57,18 @@ export class AddProductComponent implements OnInit {
     }
 
     console.log(this.product);
+    this.router.navigate(['/product-table']); 
+  }
+
+  private generateRandomProductId() {
+    const characters = '0123456789QWERTYUIOPASDFGHJKLZXCVBNM'; // Possible characters for the random string.
+    let result = '';
+
+    for (let i = 0; i < 4; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters.charAt(randomIndex);
+    }
+
+    this.product.id = result;
   }
 }

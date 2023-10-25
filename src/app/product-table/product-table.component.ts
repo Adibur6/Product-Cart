@@ -10,11 +10,30 @@ export class ProductTableComponent implements OnInit {
   products: any[] = [];
   itemsPerPage = 10; // Number of items to display per page
   currentPage = 1;
+  selectedSortField:any;
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
     this.products = this.productsService.getProducts();
+  }
+  onSortOptionSelected() {
+    // Implement your sorting logic here when a new option is selected
+    console.log('Sorting by:', this.selectedSortField);
+  
+    // Sort the products array based on the selectedSortField
+    this.products.sort((a, b) => {
+      if (this.selectedSortField === 'name') {
+        // Sort by product name
+        return a.name.localeCompare(b.name);
+      } else if (this.selectedSortField === 'price') {
+        // Sort by product price
+        return a.price - b.price;
+      } else {
+        // No sorting (selectedSortField is 'none')
+        return 0;
+      }
+    });
   }
 
   onPageChange(page: number) {

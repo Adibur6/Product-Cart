@@ -42,4 +42,8 @@ export class MyProductsService {
       this.products.splice(productIndex, 1);
     }
   }
+  checkin()
+  {
+    this.products=[];
+  }
 }

@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" #productForm="ngForm" class="form-container">
+<form  #productForm="ngForm" (ngSubmit)="onSubmit()" class="form-container">
   <div class="form-group">
     <label for="name">Name:</label>
     <input
@@ -8,6 +8,7 @@
       [(ngModel)]="product.name"
       required
       class="form-control"
+      maxlength="12"
     />
   </div>
 
@@ -20,6 +21,7 @@
       [(ngModel)]="product.id"
       required
       class="form-control"
+      disabled
     />
   </div>
 
@@ -32,6 +34,8 @@
       [(ngModel)]="product.price"
       required
       class="form-control"
+      min="1"
+      max="100000000"
     />
   </div>
 
@@ -44,6 +48,7 @@
       [(ngModel)]="product.unit"
       required
       class="form-control"
+      maxlength="10"
     />
   </div>
 
@@ -56,15 +61,27 @@
       [(ngModel)]="product.availableAmount"
       required
       class="form-control"
+      min="1"
+      max="1000000000"
     />
   </div>
 
   <button
-    type="submit"
+    
     [disabled]="productForm.invalid"
     class="add-product-button"
-    [routerLink]="['/product-table']"
+   
+    *ngIf="isAddPage"
   >
     Add Product
+  </button>
+  <button
+  
+    [disabled]="productForm.invalid"
+    class="add-product-button"
+ 
+    *ngIf="!isAddPage"
+  >
+    Edit Product
   </button>
 </form>

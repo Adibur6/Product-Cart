@@ -23,9 +23,15 @@ export class MyCartComponent {
 
   getTotalAmount(): number {
     return this.products.reduce(
-      (total, product) => total + product.price,
+      (total, product) => total + product.price*product.selectedAmount,
       0
     );
+  }
+  clearProducts()
+  {
+    this.products=[];
+    this.myProductsService.checkin();
+    console.log("checkin");
   }
   onPageChange(page: number) {
     this.currentPage = page;

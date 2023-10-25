@@ -1,4 +1,19 @@
-<table>
+<div>
+  <div class="center-container">
+    <button [routerLink]="['/add-product']" class="add-product-button">Add Product</button>
+  
+    <label for="sortBy">Sort by:</label>
+    <select id="sortBy" [(ngModel)]="selectedSortField" (change)="onSortOptionSelected()" class="sort-by-dropdown">
+      
+      <option value="name">Name</option>
+      <option value="price">Price</option>
+     
+      <!-- Add more sorting options as needed -->
+    </select>
+  </div>
+  
+  
+  <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -10,19 +25,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products | slice:(currentPage - 1) * itemsPerPage:currentPage * itemsPerPage">
+      <tr
+        *ngFor="
+          let product of products
+            | slice
+              : (currentPage - 1) * itemsPerPage
+              : currentPage * itemsPerPage
+        "
+      >
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.price | currency }}</td>
         <td>{{ product.unit }}</td>
         <td>{{ product.availableAmount }}</td>
         <td>
-          <button class="edit-button" [routerLink]="['/edit-product', product.id]">Edit</button>
-          <button class="delete-button" (click)="deleteProduct(product)">Delete</button>
+          <button
+            class="edit-button"
+            [routerLink]="['/edit-product', product.id]"
+          >
+            Edit
+          </button>
+          <button class="delete-button" (click)="deleteProduct(product)">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
-  <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="products.length" (pageChange)="onPageChange($event)"></app-pagination>
-  
-  
+  <app-pagination
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="products.length"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</div>
