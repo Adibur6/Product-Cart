@@ -132,6 +132,7 @@ export class ProductsService {
     const productIndex = this.products.findIndex(
       (product) => product.id === productId
     );
+    console.log(product);
     
 
     if (product) {
@@ -146,6 +147,7 @@ export class ProductsService {
         });
 
       } else {
+        this.products[productIndex]=product;
         this.http.put(`${this.apiUrl}/${productId}`, product).subscribe(() => {
           console.log(
             'PUT request for updating selected amount was successful.'
