@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'https://product-cart-api.onrender.com/products';
   private products: Product[] = [];
   constructor(private http: HttpClient) {
     this.getProducts().subscribe(()=>{});
