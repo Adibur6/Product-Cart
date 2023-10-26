@@ -54,7 +54,7 @@ export class CardComponent {
     };
   
     // Update the selectedAmount in the ProductsService
-    this.productsService.updateSelectedAmount(this.productId, -this.selectedAmount, productToUpdate);
+    this.productsService.updateSelectedAmount(this.productId, this.selectedAmount, productToUpdate);
   
     // Reset the quantity input and selectedAmount
     this.quantity = 0;

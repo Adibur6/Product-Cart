@@ -9,6 +9,7 @@ import { CardComponent } from './card/card.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     PaginationComponent,
     AddProductComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,FormsModule], // Add the AppRoutingModule here
+  imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule], // Add the AppRoutingModule here
   providers: [],
   bootstrap: [AppComponent],
 })

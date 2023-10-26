@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     // Fetch product data from the service when the component initializes
-    this.products = this.productsService.getProducts();
+     this.productsService.getProducts().subscribe(products => this.products=products);
   }
 
   onPageChange(page: number) {

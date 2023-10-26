@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../service/products.service';
 import { Router } from '@angular/router';
+import { Product } from '../interface/product.interface';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -10,13 +11,7 @@ import { Router } from '@angular/router';
 export class AddProductComponent implements OnInit {
   productId: string | null=null;
   isAddPage: boolean = true;
-  product: {
-    name: string;
-    id: string;
-    price: number;
-    unit: string;
-    availableAmount: number;
-  } = {
+  product: Product = {
     name: '',
     id: '',
     price: 0,

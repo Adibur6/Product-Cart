@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../service/products.service';
+import { Product } from '../interface/product.interface';
 
 @Component({
   selector: 'app-product-table',
@@ -7,7 +8,7 @@ import { ProductsService } from '../service/products.service';
   styleUrls: ['./product-table.component.css'],
 })
 export class ProductTableComponent implements OnInit {
-  products: any[] = [];
+  products: Product[] = [];
   itemsPerPage = 10; // Number of items to display per page
   currentPage = 1;
   selectedSortField:any;
@@ -15,7 +16,7 @@ export class ProductTableComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe(products => this.products=products);
   }
   onSortOptionSelected() {
     // Implement your sorting logic here when a new option is selected
@@ -40,7 +41,7 @@ export class ProductTableComponent implements OnInit {
     this.currentPage = page;
   }
 
-  deleteProduct(product: any) {
+  deleteProduct(product: Product) {
     // Find the index of the product to delete
     const productIndex = this.products.findIndex(p => p.id === product.id);
 

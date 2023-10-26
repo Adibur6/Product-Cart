@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MyProductsService } from '../service/my-products.service';
+import { MyProduct } from '../interface/myProduct.interface';
 
 @Component({
   selector: 'app-my-cart',
@@ -7,7 +8,7 @@ import { MyProductsService } from '../service/my-products.service';
   styleUrls: ['./my-cart.component.css'],
 })
 export class MyCartComponent {
-  products: any[]; // Array to store product data
+  products: MyProduct[]; // Array to store product data
   itemsPerPage = 10; // Number of items to display per page
   currentPage = 1;
 
@@ -17,7 +18,7 @@ export class MyCartComponent {
 
   ngOnInit() {
     // Fetch product data from the service
-    this.products = this.myProductsService.getProducts();
+    this.myProductsService.getProducts().subscribe(products=>this.products=products);
     console.log(this.products);
   }
 
