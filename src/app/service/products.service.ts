@@ -72,16 +72,22 @@ export class ProductsService {
   }
 
   removeProduct(productId: string): void {
+    console.log(productId);
+    console.log(this.products);
     const productIndex = this.products.findIndex(
       (product) => product.id === productId
     );
+    console.log("delete try 1.");
     if (productIndex !== -1) {
       // Remove the product from the local array
       this.products.splice(productIndex, 1);
+      console.log("delete try 2.");
 
       // Send a DELETE request to remove the product from the API
-      this.http.delete(`${this.apiUrl}/${productId}`).subscribe(() => {
-        console.log('DELETE request was successful.');
+      this.http.delete(`${this.apiUrl}/${productId}`).subscribe((response) => {
+        console.log('DELETE request was successful.',response);
+      },(response) => {
+        console.log('DELETE request was unsuccessful.',response);
       });
     }
   }

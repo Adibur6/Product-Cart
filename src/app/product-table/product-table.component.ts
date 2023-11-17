@@ -42,15 +42,9 @@ export class ProductTableComponent implements OnInit {
   }
 
   deleteProduct(product: Product) {
-    // Find the index of the product to delete
-    const productIndex = this.products.findIndex(p => p.id === product.id);
-
-    if (productIndex !== -1) {
-      // Remove the product from the local products array
-      this.products.splice(productIndex, 1);
-
+    
       // Remove the product from the ProductsService
       this.productsService.removeProduct(product.id);
-    }
+  
   }
 }
