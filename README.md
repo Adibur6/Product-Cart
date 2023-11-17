@@ -1,27 +1,58 @@
-# ProductApp
+# Product-cart App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+## Overview
 
-## Development server
+Welcome to the Product App! This web application provides a user-friendly interface for managing inventory products, adding new products, editing product information, deleting products, adding products to the cart, checking out the cart, viewing the total bill, and removing products from the cart. The frontend of the application is developed using Angular, while the backend is built with Node.js and Express. MongoDB is used as the database to store product information.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Live Demo
 
-## Code scaffolding
+You can experience the application live by visiting [https://adib-product-cart.netlify.app](https://adib-product-cart.netlify.app/).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+1.  **View Inventory:**
+    
+    -   See a concise view of available inventory products.
+2.  **Add New Products:**
+    
+    -   Easily add new products to the inventory.
+3.  **Edit Product Information:**
+    
+    -   Update product details such as name, price, quantity, etc.
+4.  **Delete Products:**
+    
+    -   Remove products that are no longer needed.
+5.  **Add Products to Cart:**
+    
+    -   Select products and add them to the shopping cart.
+6.  **Check Out Cart:**
+    
+    -   Review the selected products in the cart.
+7.  **View Total Bill:**
+    
+    -   Get a summary of the total cost of products in the cart.
+8.  **Remove Product from Cart:**
+    
+    -   Remove specific products from the shopping cart.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technology Stack
 
-## Running unit tests
+-   **Frontend:**
+    
+    -   Angular
+-   **Backend:**
+    
+    -   Node.js
+    -   Express
+-   **Database:**
+    
+    -   MongoDB
+## Contributors
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This project was developed by Ashfaqur Rahman during an industrial attachment at SELISE Digital Platforms.
 
-## Running end-to-end tests
+## Feedback and Issues
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+If you encounter any issues or have feedback, please create an issue on the [GitHub repository](https://github.com/Adibur6/Product-Cart/issues).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Thank you for using the Product App!
